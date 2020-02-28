@@ -34,8 +34,8 @@ $parser = new XMLParser($xmlReader);
 // use extenstion
 $parser->moveTo('root/products/');
 if ($parser->moveIn()) {
-	do {
-		// some actions
-	} while ($this->parser->moveToNextSibling());
+    do {
+        // some actions
+    } while ($this->parser->moveToNextSibling());
 }
 ```
