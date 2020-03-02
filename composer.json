@@ -1,7 +1,7 @@
 {
     "name": "tmitry/xmlreader-extension",
     "description": "XMLReader for PHP extension.",
-    "keywords": ["xmlreader"],
+    "keywords": ["xmlreader", "xmlparser", "xml", "reader", "parser"],
     "license": "MIT",
     "minimum-stability": "dev",
     "type": "library",

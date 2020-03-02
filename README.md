@@ -17,25 +17,29 @@ $ composer require tmitry/xmlreader-extension
 
 ```php
 use tmitry\XMLReaderExtension\XMLParser;
-
-$parser = new XMLParser();
-$parser->open($fileName);
-
-// or
-
+```
+You can use existing instance of XMLReader
+```php
 $xmlReader = new XMLReader();
 $xmlReader->open($fileName);
-// some actions with $xmlReader
+// ... some actions with instance of XMLReader
 $parser = new XMLParser($xmlReader);
+```
+or init new
+```php
+$parser = new XMLParser();
+$parser->open($fileName);
+```
 
-
-		
-		
-// use extenstion
-$parser->moveTo('root/products/');
-if ($parser->moveIn()) {
+Use extended or standart interface of XMLReader 
+```php
+// extended interface
+if ($parser->moveTo('root/products') && $parser->moveIn()) {
     do {
-        // some actions
-    } while ($this->parser->moveToNextSibling());
+        if ('root/products/product' == $parser->getPath()) {
+            // standart XMLReader interface
+            echo $parser->readOuterXml();
+        }
+    } while ($parser->moveToNextSibling());
 }
 ```

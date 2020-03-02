@@ -29,6 +29,15 @@ class XMLParser
 		throw new BadMethodCallException();
 	}
 
+	public static function __callStatic($name, $args)
+	{
+		if (is_callable([XMLReader::class, $name, true])) {
+			return call_user_func([XMLReader::class, $name], $args);
+		}
+
+		throw new BadMethodCallException();
+	}
+
 	public function open(string $fileName, $encoding = null): bool
 	{
 		// prevent XXE attacks
