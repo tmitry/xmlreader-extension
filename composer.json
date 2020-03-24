@@ -3,7 +3,6 @@
     "description": "XMLReader for PHP extension.",
     "keywords": ["xmlreader", "xmlparser", "xml", "reader", "parser"],
     "license": "MIT",
-    "minimum-stability": "dev",
     "type": "library",
     "authors": [
         {
